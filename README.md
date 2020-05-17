@@ -11,6 +11,7 @@ Department Rest API Create/Update/Read
     - Access privilege with and without.
     - Data validation basic tests since there is not much business logic.
   - Basic authentication used as this is sample application.
+  - Used Postgres Database (not H2 Database including test profile)
 
 
   - Implemented Created/Post, Update/Put, Read/Get Department.
@@ -46,6 +47,15 @@ Build & deploy as Maven project
   - docker build ./ -t department-api
   - docker-compose up
 
-  Note: if you run multiple times, some times docker suggests to remove old images. if you get into that case use following to remove and run again.
+  Trouble Shooting Note for some known issues: 
+  - Integration tests need database so run postgres locally so test cases can get success. Optionally can skip test cases.
+  - if you run multiple times, some times docker suggests to remove old images. if you get into that case use following to remove and run again.
   - docker rm -f /department-api;
   - docker rm -f /postgres;
+
+Docker Image in Docker Hub
+
+ - pushed the container in docker hub with tag hellorest
+ - https://hub.docker.com/r/pra4pra/department-api/tags
+ - can run with docker run command as well.
+
